@@ -1,0 +1,222 @@
+// This is where you can import other stylesheets or write your scss code
+// @import '../../node_modules/bootstrap/scss/bootstrap';
+
+/*Colo theme Variables*/
+
+$black-header: black;
+$dark-purple: #0d6efd;
+$alice-blue: aliceblue;
+$white: rgb(255, 255, 255);
+$para-color: rgba(131, 120, 127, 0.479);
+$main-bg-color: #e5e7ea;
+$reddish: rgb(112, 40, 40);
+$green: green;
+
+/*Colo Theme End*/
+/*Variables*/
+$center: center;
+
+/*Mix in start*/
+
+@mixin div-background {
+  background-position: $center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+}
+
+/*Mix in end*/
+
+p {
+  color: $para-color;
+}
+
+.left-navigation {
+  background-color: $dark-purple;
+  width: 21.6%;
+  position: fixed;
+
+  .logo-icon {
+    margin-left: 8%;
+  }
+  .logo-text {
+    color: $white;
+    margin-left: 10px;
+  }
+
+  h2 {
+    color: $alice-blue;
+  }
+}
+.dashboard-items {
+  a {
+    background-color: $dark-purple;
+    padding: 4rem 2rem;
+    color: $white;
+    border: none;
+  }
+}
+.upper-navigation {
+  border-bottom: solid 2px $dark-purple;
+  background-color: $alice-blue;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem;
+
+  .login i {
+    padding: 0 0.5rem;
+    font-size: 1rem;
+  }
+}
+.main {
+  background-color: $main-bg-color;
+  padding: 1rem 0;
+  display: flex;
+
+  .heading-1 {
+    color: $dark-purple;
+    margin: 2rem auto;
+  }
+
+  .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .cards {
+    background-color: $alice-blue;
+    display: flex;
+    margin: 2rem auto;
+    width: 24%;
+    border-radius: 0.3rem;
+    padding: 1rem;
+    .img-icon {
+      @include div-background;
+      width: 10%;
+      background-image: url(../images/users.png);
+      width: 80px;
+      height: 70px;
+      img {
+        width: 100%;
+      }
+    }
+    .icon-cart {
+      background-image: url(../images/cart.png);
+    }
+    .icon-products {
+      background-image: url(../images/product.png);
+    }
+    .icon-revenue {
+      background-image: url(../images/dollar.jpeg);
+    }
+    .card-content {
+      width: 80%;
+      margin: 0.5rem 0 0 0.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+  }
+}
+.employee-details {
+  background-color: $alice-blue;
+  padding: 1rem;
+  margin: 2rem auto;
+
+  // .table-info {
+  //   background-color: none;
+  // }
+  .avatar-icon {
+    @include div-background;
+    width: 60px;
+    height: 56px;
+    margin-right: 12px;
+  }
+  .avatar-one {
+    background-image: url(../images/icon/avatar-01.jpg);
+  }
+  .avatar-two {
+    background-image: url(../images/icon/avatar-02.jpg);
+  }
+  .avatar-three {
+    background-image: url(../images/icon/avatar-03.jpg);
+  }
+  .avatar-four {
+    background-image: url(../images/icon/avatar-04.jpg);
+  }
+  .avatar-five {
+    background-image: url(../images/icon/avatar-05.jpg);
+  }
+}
+tr .active-state {
+  background-color: $green;
+  text-align: $center;
+  color: $main-bg-color;
+  padding: 0 0.2rem;
+  margin-top: 0;
+  border-radius: 6px;
+  width: 100px;
+}
+tr .non-active-state {
+  background-color: $reddish;
+}
+
+@media only screen and (max-width: 600px) {
+  .menu-button {
+    display: none;
+  }
+  .login {
+    display: flex;
+    align-items: $center;
+  }
+  .heading-1 {
+    text-align: $center;
+  }
+  .cards-container .cards {
+    width: 100%;
+    margin: 1rem auto;
+  }
+  .table-head {
+    display: none;
+  }
+  .employee-details {
+    background-color: transparent;
+  }
+  tr {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    padding: 0.5rem;
+    background-color: $alice-blue;
+    // border-style: hidden;
+  }
+
+  tr .active-state p {
+    color: $dark-purple;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .left-navigation {
+    width: 48.6%;
+  }
+  .cards-container .cards {
+    width: 48%;
+    margin: 1rem auto;
+  }
+  .employee-details {
+    background-color: transparent;
+  }
+  .table-head {
+    display: none;
+  }
+  tr {
+    background-color: $alice-blue;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    padding: 1rem;
+    // border-style: hidden;
+  }
+}
